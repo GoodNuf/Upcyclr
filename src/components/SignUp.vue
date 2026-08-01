@@ -52,16 +52,6 @@ const openTerms = (txt,txt2) => {
   PopT.value.openModal(txt,txt2);
 };
 const onFormSubmit = async () => {
-  // if (password.value !== cpassword.value) {
-  //   openPopup('Error','Passwords do not match.');
-  //   console.log(password.value, cpassword.value);
-  //   return;
-  // }
-  // else if (plan.value==='Trial')
-  // {
-  //   openPopup('Sorry!','Free trials can now only be requested by contacting support@fartflix.com. We apologize for the inconvenience.');
-  //   return;
-  // }
   const form = document.getElementById('signUpForm');
   form.style.display = 'none';
   const loader = document.getElementById('spinner');
@@ -75,46 +65,8 @@ const onFormSubmit = async () => {
     console.error('Error submitting form:', error);
     openPopup('Error','Failed to submit contact form. Please try again later.');
   }
-  // const isUserCreated = await newUser();
-  // if (isUserCreated) {
-  //   if(plan.value==='Trial')
-  //   emailjs.sendForm('apple','trial',form,'rQQm5NSHaWQQ46E1J')
-  //   else if(plan.value==='Monthly') {
-  //   emailjs.sendForm('apple','pay',form,'rQQm5NSHaWQQ46E1J')
-  //   window.open('https://pay.fartflix.com/apps/2tQohmmPV14dqLgcHUoX3cExr2F8/pos', '_blank');
-  //   openPopup('Success!','Your account has been successfully created. Please complete your payment on the other tab or via the link sent to your email to activate your account.');
-  //   }
-  //   else if(plan.value==='Annual') {
-  //   emailjs.sendForm('apple','pay',form,'rQQm5NSHaWQQ46E1J')
-  //   window.open('https://pay.fartflix.com/apps/27PCbmuK7eozDZwy1fdhoqc1DAEY/pos', '_blank');
-  //   openPopup('Success!','Your account has been successfully created. Please complete your payment on the other tab or via the link sent to your email to activate your account.');
-  //   }
-  // } else {
-  //   openPopup('Error','Account creation failed. Please use another email address or try again later.');
-  // }
   loader.style.display='none';
 };
-onMounted(async () => {
-  // 1) try to read public/config.json
-  try {
-    const r = await fetch('/config.json', { cache: 'no-cache' });
-    if (r.ok) {
-      const data = await r.json();
-      if (typeof data.signups === 'boolean') {
-        toggle.value = data.signups;
-        return;
-      }
-    }
-  } catch (e) {
-    console.warn('Could not load /config.json', e);
-  }
-  // 2) fallback to localStorage
-  const local = localStorage.getItem('signups');
-  if (local !== null) {
-    toggle.value = JSON.parse(local);
-  }
-  console.log('Toggle: '+toggle.value);
-});
 </script>
 <template style="overflow-y: hidden;">
   <Teleport to="body">
@@ -155,27 +107,15 @@ onMounted(async () => {
               <Textarea v-model="body" name="body" autoResize rows="5" cols="30" style="width:100%;"required/>
               <label style="background-color: transparent;padding: 0;color:#ffffff96" for="body">Body</label>
           </FloatLabel>
-          <!-- <FloatLabel variant="on">
-            <Password v-model="password" :feedback="false" toggleMask fluid name="password"required/>
-            <label style="background-color: transparent;padding: 0;color:#ffffff96" for="password">Password</label>
-          </FloatLabel>
-          <FloatLabel variant="on">
-            <Password v-model="cpassword" :feedback="false" toggleMask fluid name="cpassword"required/>
-            <label style="background-color: transparent;padding: 0;color:#ffffff96" for="cpassword">Confirm Password</label>
-          </FloatLabel> -->
           <Checkbox inputId="agree" v-model="checked" binary required style="--p-checkbox-checked-background:#69ccc98f;--p-checkbox-checked-hover-background:#69ccc9d2;"/>
           <label style="background-color: transparent;padding-left: 10px;color:#ffffff96" for="agree">I agree to the</label><a href="#" @click.prevent='openTerms()'>Terms and Conditions</a>
           <br><br>
           <FloatLabel style="display: none;">
             <InputText v-model.number="cost" name="cost" style="width:100%;"/>
           </FloatLabel>
-          <!-- <iframe src='https://pay.fartflix.com/apps/3W21e1MBpzoSHPc9U6vNW4PxMHxx/pos' style='max-width: 100%; border: 0;'></iframe> -->
           <Button type="submit" severity="secondary" label="Submit" />
         </Form>
       </template>
-      <!-- <template #body v-if="!toggle">
-        <p>Signups are currently closed. Sorry for the inconvenience.</p>
-      </template> -->
       <template #footer>
         <button @click="showModal = false">Close</button>
       </template>
