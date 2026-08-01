@@ -1,9 +1,12 @@
 <script setup>
 import WelcomeItem from './WelcomeItem.vue'
-import PlansIcon from './icons/IconPlans.vue'
-import CatalogIcon from './icons/IconCatalog.vue'
+// import PlansIcon from './icons/IconPlans.vue'
+// import CatalogIcon from './icons/IconCatalog.vue'
 import GetStartedIcon from './icons/IconGetStarted.vue'
-import MemberIcon from './icons/IconMember.vue'
+import UpIcon from './icons/IconUp.vue'
+import ITIcon from './icons/IconIT.vue'
+import DigitizingIcon from './icons/IconDigitizing.vue'
+// import MemberIcon from './icons/IconMember.vue'
 import Switcher from './Switcher.vue'
 import Popup from './Popup.vue'
 import Catalog from './Catalog.vue'
@@ -100,7 +103,7 @@ const openShows = async () => {
 };
 </script>
 <template>
-  <WelcomeItem>
+  <!-- <WelcomeItem>
     <template #icon>
       <PlansIcon />
     </template>
@@ -109,16 +112,29 @@ const openShows = async () => {
     <h4 style="color:white;">Digitizing</h4>Cassette, CD, MiniDV, VHS<br>Rates:<br>1-10 items: $<span style="color:#69CCC9;">5</span>/each (~7 day turnaround time)<br>11-49 items: $<span style="color:#69CCC9;">4</span>/each (~14 day turnaround time)<br>50+ items: $<span style="color:#69CCC9;">3</span>/each (30+ day turnaround time)<br>
     File return format:<br>30 day cloud download: $<span style="color:#69CCC9;">0</span> (included)<br>Physical return (USB, HDD): $<span style="color:#69CCC9;">10</span>-$<span style="color:#69CCC9;">100</span>+ (market pricing)
     <h4 style="color:white;">IT Support</h4>Coming soon
-  </WelcomeItem>
-  <!-- <WelcomeItem>vvvvvvvvvvvvvvvvvvv
-    <template #icon>ttttttttttttttt
-      <CatalogIcon />
-    </template>
-    <template #heading>Catalog</template>
-    <a href="#" @click.prevent="openMovies" style="color: #69CCC9;">Movies</a>
-    <span> | </span>
-    <a href="#" @click.prevent="openShows" style="color: #69CCC9;">Shows</a>
   </WelcomeItem> -->
+    <WelcomeItem>
+    <template #icon>
+      <UpIcon />
+    </template>
+    <template #heading>Upcycling</template>
+    Coming soon<br>
+  </WelcomeItem>
+    <WelcomeItem>
+    <template #icon>
+      <DigitizingIcon />
+    </template>
+    <template #heading>Digitizing</template>
+    Cassette, CD, MiniDV, VHS<br>Rates:<br>1-10 items: $<span style="color:#69CCC9;">5</span>/each (~7 day turnaround time)<br>11-49 items: $<span style="color:#69CCC9;">4</span>/each (~14 day turnaround time)<br>50+ items: $<span style="color:#69CCC9;">3</span>/each (30+ day turnaround time)<br>
+    File return format:<br>30 day cloud download: $<span style="color:#69CCC9;">0</span> (included)<br>Physical return (USB, HDD): $<span style="color:#69CCC9;">10</span>-$<span style="color:#69CCC9;">100</span>+ (market pricing)
+  </WelcomeItem>
+    <WelcomeItem>
+    <template #icon>
+      <ITIcon />
+    </template>
+    <template #heading>IT Support</template>
+    Coming soon<br>
+  </WelcomeItem>
   <WelcomeItem>
     <template #icon>
       <GetStartedIcon />
@@ -126,13 +142,6 @@ const openShows = async () => {
     <template #heading>Get Started</template>
     <a href="#" @click.prevent="openSignUp" style="color: #69CCC9;">Contact</a><span> | </span><a href="#" @click.prevent='openPopup("Terms and Conditions","h1","b1","h2","b2","h3","b3","h4","b4","h5","b5","h6","b6")'>Terms and Conditions</a>
   </WelcomeItem>
-  <!-- <WelcomeItem>
-    <template #icon>
-      <MemberIcon />
-    </template>
-    <template #heading>Already a FartFlix<span style="color:#69CCC9;">+</span> Member?</template>
-    <a href="#" @click.prevent="openLogins" style="color: #69CCC9;">Login</a>
-  </WelcomeItem> -->
   <Terms>
     <template #txt>
       <a href="#" @click.prevent='openPopup()'>Terms and Conditions</a>
