@@ -103,16 +103,6 @@ const openShows = async () => {
 };
 </script>
 <template>
-  <!-- <WelcomeItem>
-    <template #icon>
-      <PlansIcon />
-    </template>
-    <template #heading>Services</template>
-    <h4 style="color:white;">Upcycling</h4>Coming soon<br>
-    <h4 style="color:white;">Digitizing</h4>Cassette, CD, MiniDV, VHS<br>Rates:<br>1-10 items: $<span style="color:#69CCC9;">5</span>/each (~7 day turnaround time)<br>11-49 items: $<span style="color:#69CCC9;">4</span>/each (~14 day turnaround time)<br>50+ items: $<span style="color:#69CCC9;">3</span>/each (30+ day turnaround time)<br>
-    File return format:<br>30 day cloud download: $<span style="color:#69CCC9;">0</span> (included)<br>Physical return (USB, HDD): $<span style="color:#69CCC9;">10</span>-$<span style="color:#69CCC9;">100</span>+ (market pricing)
-    <h4 style="color:white;">IT Support</h4>Coming soon
-  </WelcomeItem> -->
     <WelcomeItem>
     <template #icon>
       <UpIcon />
