@@ -18,7 +18,6 @@ const txt = ref('Loading...');
 const backgroundColour = ref('#69ccc971');
 const colour = ref('white');
 const plan = ref('Digitizing');
-const toggle = ref(false);
 const openModal = () => {
   showModal.value = true;
   txt.value='Sign Up';
@@ -31,7 +30,7 @@ const initialValues = {
   email: '',
   password: '',
   cpassword: '',
-  plan: 'Trial',
+  plan: 'Digitizing',
 };
 defineExpose({
   openModal,
@@ -74,7 +73,7 @@ const onFormSubmit = async () => {
       <template #header>
         <h3 style="color: white;">Contact Form</h3>
       </template>
-      <template #body v-if="toggle">
+      <template #body>
         <div id="spinner" style="display:none;">
           <div class="spring-spinner" style="margin: 0 auto;">
             <div class="spring-spinner-part top">
