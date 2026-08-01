@@ -108,15 +108,15 @@ const openShows = async () => {
       <UpIcon />
     </template>
     <template #heading>Upcycling</template>
-    Coming soon<br>
+    Technology selling & procurement<br>Rates: (per transaction)<br>≤$100: <span style="color:#69CCC9;">10%</span> fee<br>$101-$750: <span style="color:#69CCC9;">7.5%</span> fee<br>$751+: <span style="color:#69CCC9;">5%</span> fee
   </WelcomeItem>
     <WelcomeItem>
     <template #icon>
       <DigitizingIcon />
     </template>
     <template #heading>Digitizing</template>
-    Cassette, CD, MiniDV, VHS<br>Rates:<br>1-10 items: $<span style="color:#69CCC9;">5</span>/each (~7 day turnaround time)<br>11-49 items: $<span style="color:#69CCC9;">4</span>/each (~14 day turnaround time)<br>50+ items: $<span style="color:#69CCC9;">3</span>/each (30+ day turnaround time)<br>
-    File return format:<br>30 day cloud download: $<span style="color:#69CCC9;">0</span> (included)<br>Physical return (USB, HDD): $<span style="color:#69CCC9;">10</span>-$<span style="color:#69CCC9;">100</span>+ (market pricing)
+    Cassette, CD, MiniDV, VHS<br>Rates:<br>1-10 items: <span style="color:#69CCC9;">$5</span>/each (est. 5 business days)<br>11-49 items: <span style="color:#69CCC9;">$4</span>/each (est. 5-25 business days)<br>50+ items: <span style="color:#69CCC9;">$3.50</span>/each (est. 25+ business days)<br>
+    File return method:<br>30 day cloud download: <span style="color:#69CCC9;">$0</span> (included)<br>Physical return (USB, HDD): <span style="color:#69CCC9;">$10</span>-<span style="color:#69CCC9;">$100+</span> (market pricing)
   </WelcomeItem>
     <WelcomeItem>
     <template #icon>

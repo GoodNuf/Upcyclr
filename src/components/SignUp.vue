@@ -86,7 +86,7 @@ const onFormSubmit = async () => {
         </div>
         <Form id="signUpForm" v-slot="{values}" :resolver="resolver" :initialValues="initialValues" @submit="onFormSubmit(values)" class="flex flex-col gap-4">
           <div class="label-container">
-            <RadioButton v-model="plan" inputId="Upcycling" name="plan" value="Upcycling" style="display: none;" @change="cost=0" disabled/>
+            <RadioButton v-model="plan" inputId="Upcycling" name="plan" value="Upcycling" style="display: none;" @change="cost=0"/>
             <label for="Upcycling" :class="{active:plan==='Upcycling'}" style="margin-right: 8px;">Upcycling</label>
             <RadioButton v-model="plan" inputId="Digitizing" name="plan" value="Digitizing" style="display: none;" @change="cost=6"/>
             <label for="Digitizing" :class="{active:plan==='Digitizing'}">Digitizing</label>
