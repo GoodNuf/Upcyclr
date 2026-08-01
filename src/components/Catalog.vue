@@ -42,14 +42,14 @@ const Movies = async () => {
   showModal.value = true;
   header.value = 'Movies';
   isLoading.value = true;
-  await loadCSV('src/assets/Movies.csv');
+  await loadCSV(`${import.meta.env.BASE_URL}Movies.csv`);
   isLoading.value = false;
 };
 const TV = async () => {
   showModal.value = true;
   header.value = 'TV Shows';
   isLoading.value = true;
-  await loadCSV('src/assets/Shows.csv');
+  await loadCSV(`${import.meta.env.BASE_URL}Shows.csv`);
   isLoading.value = false;
 };
 defineExpose({

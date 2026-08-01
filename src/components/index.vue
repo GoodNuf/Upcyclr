@@ -95,11 +95,11 @@ const loadCSV = async (filePath) => {
 };
 const openMovies = async () => {
   dialogVisibleMovies.value = true;
-  await loadCSV('/Movies.csv');
+  await loadCSV(`${import.meta.env.BASE_URL}Movies.csv`);
 };
 const openShows = async () => {
   dialogVisibleShows.value = true;
-  await loadCSV('/Shows.csv');
+  await loadCSV(`${import.meta.env.BASE_URL}Shows.csv`);
 };
 </script>
 <template>

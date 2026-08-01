@@ -31,8 +31,8 @@ async function persistConfig(val) {
   // always save locally for immediate persistence per-browser
   localStorage.setItem('signups', JSON.stringify(val));
   try {
-    // your server should expose an endpoint to write config.json
-    const res = await fetch('public/config.json', {
+    const configUrl = `${import.meta.env.BASE_URL}config.json`;
+    const res = await fetch(configUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ signups: !!val })
@@ -47,9 +47,9 @@ watch(toggle, (val) => {
   persistConfig(val);
 });
 onMounted(async () => {
-  // 1) try to read public/config.json
   try {
-    const r = await fetch('/config.json', { cache: 'no-cache' });
+    const configUrl = `${import.meta.env.BASE_URL}config.json`;
+    const r = await fetch(configUrl, { cache: 'no-cache' });
     if (r.ok) {
       const data = await r.json();
       if (typeof data.signups === 'boolean') {
@@ -58,7 +58,7 @@ onMounted(async () => {
       }
     }
   } catch (e) {
-    console.warn('Could not load /config.json', e);
+    console.warn('Could not load config.json', e);
   }
   // 2) fallback to localStorage
   const local = localStorage.getItem('signups');
