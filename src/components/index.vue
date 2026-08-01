@@ -115,7 +115,7 @@ const openShows = async () => {
       <DigitizingIcon />
     </template>
     <template #heading>Digitizing</template>
-    Cassette, CD, MiniDV, VHS<br>Rates:<br>1-10 items: <span style="color:#69CCC9;">$5</span>/each (est. 5 business days)<br>11-49 items: <span style="color:#69CCC9;">$4</span>/each (est. 5-25 business days)<br>50+ items: <span style="color:#69CCC9;">$3.50</span>/each (est. 25+ business days)<br>
+    Cassette, CD, MiniDV, VHS<br>Rates:<br>1-20 items: <span style="color:#69CCC9;">$5</span>/each (est. 10 business days)<br>21-50 items: <span style="color:#69CCC9;">$4</span>/each (est. 10-25 business days)<br>51+ items: <span style="color:#69CCC9;">$3.50</span>/each (est. 25+ business days)<br>
     File return method:<br>30 day cloud download: <span style="color:#69CCC9;">$0</span> (included)<br>Physical return (USB, HDD): <span style="color:#69CCC9;">$10</span>-<span style="color:#69CCC9;">$100+</span> (market pricing)
   </WelcomeItem>
     <WelcomeItem>
