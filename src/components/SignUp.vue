@@ -57,7 +57,7 @@ const onFormSubmit = async () => {
   loader.style.display = 'block';
   loading.value = true;
   try{
-    emailjs.sendForm('apple','confirmed',form,'LJMQj7PwVzyQgU9j6')
+    emailjs.sendForm('apple','upcyclr',form,'LJMQj7PwVzyQgU9j6')
     openPopup('Success!','Thank you for your inquiry! You will be contacted after your inquiry has been reviewed.');
   }
   catch(error) {
